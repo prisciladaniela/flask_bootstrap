@@ -1,19 +1,23 @@
 {% extends 'base.html' %}
-​
 {% block title %} User page {% endblock %}
-​
 {% block body %}
 <!-- Begin page content -->
-<main class="flex-shrink-0">
+<main
+class="flex-shrink-0">
   <div class="container">
     <h1>Aplicación Web con Flask y Bootstrap</h1>
-    <a href="{{url_for('create')}}" class="btn btn-primary">Nuevo</a>
+    <a href="{{ url_for('create')}}" class = "btn btn-primary">Nuevo Mensaje</a>
     {% for message in messages %}
         <div class='message'>
             <h3>{{ message['title'] }}</h3>
-            <img src="{{message['picture']}}" alt="{{message['title']}}" class ="img img-fluid">
+            <img src="{{message['picture']}}"alt="{{message['title']}}"
+            class = "img img-fluid">
             <p>{{ message['content'] }}</p>
             <a href="{{ url_for('update', id = message.id)}}">Actualizar</a>
+            <form action="{{url_for('delete')}}" method="post" onsubmit="return confirm ('Tai seguro?')">
+              <input type="hidden" name="id" value="{{message.id}}">
+              <input type="submit" value="Eliminar" class=" btn btn-danger">
+            </form>
         </div>
     {% endfor %}
   </div>

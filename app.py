@@ -54,7 +54,17 @@ def update(id):
             db.session.commit()
             return redirect ('/')
 
-    return render_template('update.html', message =message)        
+    return render_template('update.html', message =message)   
+
+@app.route('/delete', methods = ['Post'])
+def delete():
+    id = request.form['id']
+    message = Message.query.filter_by(id=id).first()
+    db.session.delete(message)
+    db.session.commit()
+    flash('Mensaje Eliminado')
+    return redirect('/')
+    
 
 @app.route('/usuario/<name>')
 def user(name):
