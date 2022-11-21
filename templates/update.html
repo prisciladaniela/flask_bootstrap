@@ -3,16 +3,16 @@
 {% block title %} User page {% endblock %}
 ​
 {% block body %}
-  <h1> Actualiza el mensaje </h1>
+  <h1 class="text-center"> Actualiza el mensaje </h1>
   <form method="post">
-    <label for="title">Titulo</label>
-    <br>
+    <label for="title" class="form-label">Titulo</label>
+    
     <input type="text" name="title" id= "title"
            placeholder="Titulo del mensaje"
-           value="{{ message.title }}"></input>
-    <br>
+           value="{{ message.title }}" class="form-control"></input>
+    
     <label for="<label for="title">Titulo</label>
-    <br>
+    
     <input type="text" name="title" id= "title"
            placeholder="Titulo del mensaje"
            value="{{ message.title }}"></input>
@@ -35,8 +35,9 @@
               placeholder="Contenido del mensaje"
               rows="15"
               cols="60"
+              class ="form-control"
               >{{ message.content }}</textarea>
-    <br>
-    <button type="submit">Submit</button>
+    
+    <button type="submit" class ="btn btn-primary">Submit</button>
 </form>
 {% endblock %}
