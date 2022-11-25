@@ -33,5 +33,6 @@ Los comandos anteriores se deben ejecutar dentro de `pipenv shell`
 
 ## Levantando la aplicación
 Para ejecutar el servidor de desarrollo el comando es el siguiente
-
+```
 flask --app app-- debug run
+```
