@@ -1,7 +1,7 @@
-from flask import render_template, request
+from flask import render_template, request, redirect
+from app.extensions import db
 from app.messages import bp
 from app.models.message import Message
-
 
 @bp.route('/')
 def index():
@@ -23,8 +23,8 @@ def create():
             message = Message(title = title, content = content, picture = picture)    
             db.session.add(message)
             db.session.commit()
-            return redirect(url_for('index'))
-    return render_template('create.html')
+            return redirect(url_for('messages.index'))
+    return render_template('messages/create.html')
 
 @bp.route('/<id>/update', methods = ('GET', 'POST'))
 def update(id):

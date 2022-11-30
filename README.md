@@ -36,3 +36,23 @@ Para ejecutar el servidor de desarrollo el comando es el siguiente
 ```
 flask --app app-- debug run
 ```
+
+Cuando hacemos algun camnio en un modelo y necesitamos considerar esos datos tambien en la base de datos, hay que generar un nueva migracion
+
+```
+flask db migrate -m"mensaje de la migracion"
+```
+
+
+**nota**: Los comandos anterios se deben ejecuta dentro de 'pipenv shell'
+
+## Blueprint
+
+los blueprint permiten componer aplicaciones desde componentes pequeños. Cada componente es como una mini aplicación.  Permiten crear apliacaciones grandes manteniendolas simples.
+
+## Modulos 
+
+Para que los blueprint esten bien organizados, es mejor trabajarlos como modulos, es decir que esten dentro de una carpeta. Los modulos se pueden anidar, de hecho, nosotros hicimos el modulo `app` con su respectivo `__init__.py` y dentro tenemos otro módulo, como el módulo `messages` que es ademas u blueprint.
+
+## Tarea 
+Crear un nuevo recurso sencillo, sin base de datos, como blueprint bajo a url `/memes` y debe renderiar un html lleno de memes.
