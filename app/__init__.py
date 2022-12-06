@@ -16,12 +16,17 @@ def create_app(config_class=Config):
     # Memes blueprint 
     from app.memes import bp as memes_bp
     app.register_blueprint(memes_bp,url_prefix='/memes')
+
     # Main blueprint
     from app.main import bp as main_bp
     app.register_blueprint(main_bp)
+
     # Messages blueprint
     from app.messages import bp as messages_bp
     app.register_blueprint(messages_bp, url_prefix='/messages')
+
+    from app.auth import bp as auth_bp
+    app.register_blueprint(auth_bp, url_prefix='/auth')
 
     @app.route('/test/')
     def test_page():

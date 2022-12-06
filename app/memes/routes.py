@@ -1,10 +1,10 @@
 from app.memes import bp
 from flask import render_template
-from flask login import login_required
+from flask_login import login_required
 
 
 
 @bp.route('/')
-@login.required
+@login_required
 def index():
     return render_template('memes/index.html')
