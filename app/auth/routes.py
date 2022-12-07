@@ -1,6 +1,6 @@
 from app.auth import bp
 from flask import render_template, request, flash, redirect, url_for
-from flask_login import login_user
+from flask_login import login_user, login_required, logout_user
 from app.extensions import db
 from app.models.user import User
 
@@ -56,3 +56,10 @@ def login():
 
             return redirect(url_for('auth.index'))
     return render_template('auth/login.html')
+
+@bp.route('logout')
+@login_required
+def logout():
+    logout_user()
+    flash('Sesión cerrada')
+    return redirect('/auth/login')
