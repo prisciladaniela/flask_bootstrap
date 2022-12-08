@@ -60,3 +60,12 @@ Crear un nuevo recurso sencillo, sin base de datos, como blueprint bajo a url `/
 En una arquitectura para separar las responsabilidades en la manipulacion de las solicitudes y respuestas. Quien recibe las solicitdes es el controlador o en flask, las rutas.Los controladores se encargan de revisar que la solicitud cumpla con las caracteristicas necesarias para entregar una respuesta acorde (que tengo todos los datos). Si el controlador lo permite, se podria opcionalmente llamar al modelo para obtener o modificar los datos de la BBDD. Y finalmente enviar una respuesta que contenga la presentacion de la aplicacion. En nuestro caso la capa de presentacion comunmente conocida como Vistas (view) se llaman Templates.
 
 Por lo tanto en Flask el MVC podria ser adaptado como MTR(Modelo, Template, Ruta), pero es lo mismo en terminos de separar la responsabilidad 
+## Tecnicas de debugeo
+
+Para acceder a los atributos de cualquier instancia es posible ejecutar lo siguien en un template:
+
+```
+{{message.id}}
+```
+
+Esto mostrara en cada mensaje el id de este.
