@@ -3,22 +3,20 @@
 {% block title %} User page {% endblock %}
 ​
 {% block body %}
-  <h1 class="text-center"> Actualiza el mensaje </h1>
+  <h1 class="text-center"> Actualiza el producto </h1>
   <form method="post">
-    <label for="title" class="form-label">Titulo</label>
-    
+    <label for="title" class="form-label">Nombre</label>
     <input type="text" name="title" id= "title"
-           placeholder="Titulo del mensaje"
+           placeholder="Nombre del producto"
            value="{{ message.title }}" class="form-control"></input>
     
     <label for="<label for="title">Titulo</label>
     
     <input type="text" name="title" id= "title"
            placeholder="Titulo del mensaje"
-           value="{{ message.title }}"></input>
+           value="{{ message.title }}">Descripcion del producto</input>
     <br>">Titulo</label>
     <br>
-
     <input type="text" name="<label for="title">Titulo</label>
     <br>
     <input type="text" name="title" id= "title"
@@ -30,13 +28,18 @@
     <br>
 
     <label for="content">Contenido del mensaje</label>
-    <br>
+    
     <textarea name="content" id="content"
               placeholder="Contenido del mensaje"
               rows="15"
               cols="60"
               class ="form-control"
               >{{ message.content }}</textarea>
+     <label for="price">Precio</label>
+     <input type="text" name="price" id="price">
+
+     <label for="link">Link de pago</label>
+     <input type="text" name="link" id="link">
     
     <button type="submit" class ="btn btn-primary">Submit</button>
 </form>
